@@ -1,11 +1,9 @@
 import json
-#import data.wirelesschecker_scrape
-#import wirelesschecker_scrape
+
 
 
 def search_wirelesschecker(buildingname):
 	file = open('data/wirelesschecker.json', 'r')
-	#file = open('wirelesschecker.json', 'r')
 	wirelesscheckers = json.load(file)['data']
 
 
@@ -30,8 +28,6 @@ def search_busy_building():
 			percentage = clientdevice / totalAP
 		
 		if percentage > 3.5:	
-			#print(percentage)
 			results.append(wirelesschecker['buildingname'])
-			#print((wirelesschecker['buildingname']))
 	return results
 
