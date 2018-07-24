@@ -11,6 +11,7 @@ help: |
   For example, if want to know the wireless information for Illini Union, just say "Illini Union". 
   Then, say "start" to initiate the query. 
   Or, you can say "which buildings are busy", and I will tell you the names of busy buildings. 
+  Or, you can say "which building has mostly connection", and I will tell you top 3 buildingname and how many client device.
   Finally, you can say "stop" or "goodbye" to end this session.
 
 confirm-clue: |
@@ -24,7 +25,7 @@ answer-busy-results: |
   The following buildings are currently busy: {{ result }}. 
   
 answer-mostly-connection: |
-  The top 1 building is {{ result[0] }} which has {{ result[1] }} connection, The top 2 building is {{ result[2] }} which has {{ result[3] }} connection, the top 3 building is {{ result[4] }} which has {{ result[5] }} connection. 
+  The buildings with the highest number of connected client devices are: {{ result[0] }} which has {{ result[1] }} connections, {{ result[2] }} which has {{ result[3] }} connections, and {{ result[4] }} which has {{ result[5] }} connections.	
 
 answer-noresults: |
   I'm sorry, but I don't know a building that matches that query. 
