@@ -1,19 +1,36 @@
-welcome: Welcome to U.I.U.C. Quient studying space alexa skill by wireless checker. How can I help you? Say "help" to know about how to use me.
 
-help: You can search wireless connections information of U.I.U.C in different building. And, I will tell you how many Total wireless access points and how many Client Device to connect these points. To start a query, you need to tell me the building name. For example, you want to know the wireless information for Illini Union, you need to say "Illini Union". Then, say "start" to  initiate the query. Or, you could say "which buildings are busy". And, I will tell you the busy buildingname. Or, you could say "which building has mostly connection". And, I will tell you the top 3 mostly connection buildingname and how many client device. You can try it now. Finally, you could say "stop" or "goodbye" to end this session.
+welcome: |
+  Welcome to the University of Illinois, Urbana-Champaign quiet space information skill,
+  using wireless connection info to determine the busyness of a building on campus.
+  How can I help you? If you'd like more information on what I can do, say "help".
 
-confirm-clue: Got it, {{ which_name }} {{ name }}. Say "start" or "begin" to initiate the query.
+help: |
+  I can provide information about wireless connections in various buildings here at the university. 
+  I can also tell you how many total wireless access points and client devices are connected to these points. 
+  To start a query, just tell me the building name. 
+  For example, if want to know the wireless information for Illini Union, just say "Illini Union". 
+  Then, say "start" to initiate the query. 
+  Or, you can say "which buildings are busy", and I will tell you the names of busy buildings. 
+  Finally, you can say "stop" or "goodbye" to end this session.
 
-answer-results: There are total {{ result["totalAP"] }} wireless access points and {{ result["clientdevices"] }} client devices to connect these points at {{ result["buildingname"] }}. Anything else?
+confirm-clue: |
+  Got it, {{ which_name }} {{ name }}. Say "start" or "begin" to initiate the query.
 
-answer-busy-results: The buildingname {{ result }} are busy building. 
+answer-results: |
+  There are a total of {{ result["totalAP"] }} wireless access points, and {{ result["clientdevices"] }} client devices connected to these points, at {{ result["buildingname"] }}. 
+  Anything else?
 
-answer-mostly-connection: The top 1 building is {{ result[0] }} which has {{ result[1] }} connection, The top 2 building is {{ result[2] }} which has {{ result[3] }} connection, the top 3 building is {{ result[4] }} which has {{ result[5] }} connection. 
+answer-busy-results: |
+  The following buildings are currently busy: {{ result }}. 
 
-answer-noresults: I am sorry to tell you that there is no building name matching your query. You can start another query now, or say "stop" to end this session.
+answer-noresults: |
+  I'm sorry, but I don't know a building that matches that query. 
+  You can start another query now, or say "stop" to end this session.
 
-error-not-understand: I am sorry that I couldn't understand you. Could you say it again?
+error-not-understand: |
+  I'm sorry, but I couldn't understand that. Could you say it again?
 
-error-other: I am sorry to tell you that something has gone wrong. Please try again.
+error-other: |
+  I'm sorry, but I am experiencing an error. Please try again.
 
-goodbye: Goodbye. Thank you for using U.I.U.C wireless checker.
+goodbye: Goodbye. Thank you for using University of Illinois, Urbana-Champaign wireless checker.
