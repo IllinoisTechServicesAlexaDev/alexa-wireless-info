@@ -22,6 +22,9 @@ answer-results: |
 
 answer-busy-results: |
   The following buildings are currently busy: {{ result }}. 
+  
+answer-mostly-connection: |
+  The top 1 building is {{ result[0] }} which has {{ result[1] }} connection, The top 2 building is {{ result[2] }} which has {{ result[3] }} connection, the top 3 building is {{ result[4] }} which has {{ result[5] }} connection. 
 
 answer-noresults: |
   I'm sorry, but I don't know a building that matches that query. 
