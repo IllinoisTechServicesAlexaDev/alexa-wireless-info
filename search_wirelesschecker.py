@@ -1,11 +1,9 @@
 import json
-
-
+import operator
 
 def search_wirelesschecker(buildingname):
 	file = open('data/wirelesschecker.json', 'r')
 	wirelesscheckers = json.load(file)['data']
-
 
 	results = []
 	for wirelesschecker in wirelesscheckers:
@@ -13,7 +11,6 @@ def search_wirelesschecker(buildingname):
 		if buildingname   != None and buildingname.lower() != wirelesschecker['buildingname'].lower():   continue
 		results.append(wirelesschecker)
 	return results
-
 
 def search_busy_building():
 	file = open('data/wirelesschecker.json', 'r')
@@ -38,8 +35,7 @@ def search_most_connection():
 	data = {}
 	for wirelesschecker in wirelesscheckers:
 		buildingname = wirelesschecker['buildingname']
-		clientdevice = int(wirelesschecker['clientdevices'])
-		totalAP = int(wirelesschecker['totalAP'])			
+		clientdevice = int(wirelesschecker['clientdevices'])			
 		data[buildingname] = clientdevice
 
 	sorted_by_value = sorted(data.items(), key=lambda kv: kv[1], reverse=True)
